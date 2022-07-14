@@ -8,12 +8,14 @@ public class ExecutarComandoEspecificoImpl implements ExecutarComandoEspecifico 
     private final Deposito deposito;
     private final Saque saque;
     private final AbrirConta abrirConta;
+    private final Transferencia transferencia;
 
     public ExecutarComandoEspecificoImpl() {
         MemoriaContaRepository repository = new MemoriaContaRepository();
         this.deposito = new DepositoImpl(repository);
         this.saque = new SaqueImpl(repository);
         this.abrirConta = new AbrirContaImpl(repository);
+        this.transferencia = new TransferenciaImpl(repository);
     }
 
     @Override
@@ -41,10 +43,22 @@ public class ExecutarComandoEspecificoImpl implements ExecutarComandoEspecifico 
             System.out.println("Digite o valor do depósito:");
             double valor = entrada.nextDouble();
 
-            deposito.execute (valor, numero);
+            deposito.execute(valor, numero);
 
         } else if (comando == 3) {
             abrirConta.execute();
+
+        } else if (comando == 4) {
+            System.out.println("Digite o número da conta de origem:");
+            int numeroContaOrigem = entrada.nextInt();
+
+            System.out.println("Digite o número da conta de destino:");
+            int numeroContaDestino = entrada.nextInt();
+
+            System.out.println("Digite o valor da transferência:");
+            double valor = entrada.nextDouble();
+
+            transferencia.execute(valor, numeroContaOrigem, numeroContaDestino);
 
         } else {
             System.out.println("Opção inválida! Tente novamente!");

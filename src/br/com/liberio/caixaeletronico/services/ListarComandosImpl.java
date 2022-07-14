@@ -9,7 +9,7 @@ public class ListarComandosImpl implements ListarComandos {
         System.out.println("Digite 1 para Saque");
         System.out.println("Digite 2 para Depósito");
         System.out.println("Digite 3 para Abrir Nova Conta");
-//        System.out.println("Digite 4 para Transferência");
+        System.out.println("Digite 4 para Transferência");
         System.out.println();
     }
 }

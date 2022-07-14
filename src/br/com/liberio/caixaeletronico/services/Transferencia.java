@@ -1,6 +1,5 @@
 package br.com.liberio.caixaeletronico.services;
 
-import br.com.liberio.caixaeletronico.model.Conta;
 /**
  * Transferir um valor entre a conta de origem para a conta de destido.
  */
@@ -11,8 +10,8 @@ public interface Transferencia {
      *
      * @param valor         Valor que eu quero transferir
      * @param numeroContaDestino  Número da conta que vai receber o dinheiro
-     * @param origem        Conta de onde vai partir a transação
+     * @param numeroContaOrigem        Conta de onde vai partir a transação
      */
-    void transferir(double valor, Conta numeroContaDestino, Conta origem);
+    void execute(double valor, int numeroContaDestino, int numeroContaOrigem);
 }
 
