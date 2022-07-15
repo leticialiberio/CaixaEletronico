@@ -3,7 +3,7 @@ package br.com.liberio.caixaeletronico.services;
 import br.com.liberio.caixaeletronico.model.Conta;
 import br.com.liberio.caixaeletronico.repository.MemoriaContaRepository;
 
-public class TransferenciaImpl implements Transferencia{
+public class TransferenciaImpl implements Transferencia {
     private final MemoriaContaRepository repository;
 
     public TransferenciaImpl(MemoriaContaRepository repository) {
@@ -19,13 +19,12 @@ public class TransferenciaImpl implements Transferencia{
         contaOrigem.retirarSaldo(valor);
         contaDestino.adicionaSaldo(valor);
 
-        System.out.println("Conta de origem:" + numeroContaOrigem);
-        System.out.println("Valor da transferência: " + valor);
-        System.out.println("Conta de destino:" + numeroContaDestino);
+        System.out.println("Conta de débito:" + numeroContaOrigem);
+        System.out.println("Valor da transferência:  R$" + valor);
+        System.out.println("Conta de crédito:" + numeroContaDestino);
         System.out.println();
-        System.out.printf("Transferência efetuada com sucesso! %nO saldo atualizado é de R$%.2f %n%n", contaOrigem.getSaldo());
+        System.out.printf("Transferência efetuada com sucesso! %nO saldo atualizado é de R$%.2f %nSaldo sujeito a alteração até o final do dia.%n", contaOrigem.getSaldo());
 
-        System.out.printf("Transferência recebida com sucesso! %nO saldo atualizado é de R$%.2f %n%n", contaDestino.getSaldo());
-
+        System.out.printf("Transferência recebida com sucesso! %nO saldo atualizado é de R$%.2f %nSaldo sujeito a alteração até o final do dia.%n", contaDestino.getSaldo());
     }
 }

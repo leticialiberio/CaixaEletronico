@@ -9,20 +9,20 @@ public class SaqueImpl implements Saque {
 
     public SaqueImpl(MemoriaContaRepository repository) {
         this.repository = repository;
-    } //método para efetuar o saque, usa a memória para buscar a conta armazenada
+    }
 
     @Override
     public void execute(double valor, int numeroDaConta) {
-        Conta conta; //usa a classe conta modelo
+        Conta conta;
 
-        conta = repository.findById(numeroDaConta); //indica a conta em que o saque será efetuado através da sua id (número da conta)
+        conta = repository.findById(numeroDaConta);
 
-        conta.retirarSaldo(valor); //diminui o valor depositado ao saldo inicial da conta
+        conta.retirarSaldo(valor);
 
-        System.out.println("Valor sacado: " + valor);
-        System.out.println("Número da conta: " + numeroDaConta);
+        System.out.println("Valor do saque: R$" + valor);
+        System.out.println("Número da conta para débito: " + numeroDaConta);
         System.out.println();
-        System.out.printf("Saque efetuado com sucesso! %nO saldo atualizado é de R$%.2f %n%n", conta.getSaldo());
+        System.out.printf("Saque efetuado com sucesso! %nO saldo atualizado é de R$%.2f %nSaldo sujeito a alteração até o final do dia.%n", conta.getSaldo());
     }
 }
 

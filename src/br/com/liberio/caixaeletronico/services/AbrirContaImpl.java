@@ -8,17 +8,17 @@ private final MemoriaContaRepository repository;
 
     public AbrirContaImpl(MemoriaContaRepository repository) {
         this.repository = repository;
-    } //método para abertura da conta usando a mémoria para armazenar
+    }
 
     @Override
     public Conta execute() {
-        Conta conta; //usa a classe conta modelo
+        Conta conta;
 
-        conta = new Conta(); // construtor para criar uma conta nova
+        conta = new Conta();
 
-        repository.adiciona(conta); //usa o repositório e adiciona uma nova conta
+        repository.adiciona(conta);
 
-        System.out.printf("Conta número %d o saldo é de R$ %.2f %n %n", conta.getNumeroDaConta(), conta.getSaldo());
+        System.out.printf("O número da sua conta é %d e o saldo atual é de R$%.2f %n %n", conta.getNumeroDaConta(), conta.getSaldo());
 
         return conta;
     }

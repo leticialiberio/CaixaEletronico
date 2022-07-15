@@ -9,19 +9,19 @@ public class DepositoImpl implements Deposito {
 
     public DepositoImpl(MemoriaContaRepository repository) {
         this.repository = repository;
-    } //método para efetuar o depósito, usa a memória para buscar a conta armazenada
+    }
 
     @Override
     public void execute(double valor, int numeroDaConta) {
-        Conta conta; //usa a classe conta modelo
+        Conta conta;
 
-        conta = repository.findById(numeroDaConta); //indica a conta em que o depósito será efetuado através da sua id (número da conta)
+        conta = repository.findById(numeroDaConta);
 
-        conta.adicionaSaldo(valor); //adiciona o valor depositado ao saldo inicial da conta
+        conta.adicionaSaldo(valor);
 
-        System.out.println("Valor depositado: " + valor);
-        System.out.println("Número da conta de depósito: " + numeroDaConta);
+        System.out.println("Valor do depósito: R$" + valor);
+        System.out.println("Número da conta para crédito: " + numeroDaConta);
         System.out.println();
-        System.out.printf("Depósito efetuado com sucesso! %nO saldo atualizado é de R$%.2f %n%n", conta.getSaldo());
+        System.out.printf("Depósito efetuado com sucesso! %nO saldo atualizado é de R$%.2f %nSaldo sujeito a alteração até o final do dia.%n", conta.getSaldo());
     }
 }

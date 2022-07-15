@@ -24,10 +24,14 @@ public class ExecutarComandoEspecificoImpl implements ExecutarComandoEspecifico 
         boolean resultado = true;
 
         if (comando == 0) {
-            System.out.println("Encerrando a operação");
+            System.out.println("Operação finalizada.");
             resultado = false;
 
         } else if (comando == 1) {
+            System.out.println("Seja bem-vindo! Sua conta foi aberta com sucesso!");
+            abrirConta.execute();
+
+        } else if (comando == 2) {
             System.out.println("Digite o número da conta:");
             int numero = entrada.nextInt();
 
@@ -36,7 +40,7 @@ public class ExecutarComandoEspecificoImpl implements ExecutarComandoEspecifico 
 
             saque.execute(valor, numero);
 
-        } else if (comando == 2) {
+        } else if (comando == 3) {
             System.out.println("Digite o número da conta:");
             int numero = entrada.nextInt();
 
@@ -45,14 +49,11 @@ public class ExecutarComandoEspecificoImpl implements ExecutarComandoEspecifico 
 
             deposito.execute(valor, numero);
 
-        } else if (comando == 3) {
-            abrirConta.execute();
-
         } else if (comando == 4) {
-            System.out.println("Digite o número da conta de origem:");
+            System.out.println("Digite o número da conta de débito:");
             int numeroContaOrigem = entrada.nextInt();
 
-            System.out.println("Digite o número da conta de destino:");
+            System.out.println("Digite o número da conta para crédito:");
             int numeroContaDestino = entrada.nextInt();
 
             System.out.println("Digite o valor da transferência:");
