@@ -18,7 +18,7 @@ private final MemoriaContaRepository repository;
 
         repository.adiciona(conta);
 
-        System.out.printf("O número da sua conta é %d e o saldo atual é de R$%.2f %n %n", conta.getNumeroDaConta(), conta.getSaldo());
+        System.out.printf("O número da sua conta é %d e o saldo atual é de R$%.2f. %n %n", conta.getNumeroDaConta(), conta.getSaldo());
 
         return conta;
     }

@@ -19,9 +19,9 @@ public class DepositoImpl implements Deposito {
 
         conta.adicionaSaldo(valor);
 
-        System.out.println("Valor do depósito: R$" + valor);
+        System.out.printf("Valor do depósito: R$%.2f%n", valor);
         System.out.println("Número da conta para crédito: " + numeroDaConta);
         System.out.println();
-        System.out.printf("Depósito efetuado com sucesso! %nO saldo atualizado é de R$%.2f %nSaldo sujeito a alteração até o final do dia.%n", conta.getSaldo());
+        System.out.printf("Depósito efetuado com sucesso! %nO saldo atualizado é de R$%.2f. %nSujeito a alteração até o final do dia.%n%n", conta.getSaldo());
     }
 }

@@ -19,10 +19,10 @@ public class SaqueImpl implements Saque {
 
         conta.retirarSaldo(valor);
 
-        System.out.println("Valor do saque: R$" + valor);
+        System.out.printf("Valor do saque: R$%.2f%n", valor);
         System.out.println("Número da conta para débito: " + numeroDaConta);
         System.out.println();
-        System.out.printf("Saque efetuado com sucesso! %nO saldo atualizado é de R$%.2f %nSaldo sujeito a alteração até o final do dia.%n", conta.getSaldo());
+        System.out.printf("Saque efetuado com sucesso! %nO saldo atualizado é de R$%.2f. %nSujeito a alteração até o final do dia.%n%n", conta.getSaldo());
     }
 }
 
